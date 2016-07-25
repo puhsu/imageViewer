@@ -1,36 +1,58 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title></title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="selectize/css/selectize.css">
-    <link rel="stylesheet" type="text/css" href="css/third.css">
-    <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <script src="selectize/js/standalone/selectize.js"></script>
-    <script src="fullscreen/screenfull.min.js"></script>
-</head>
-<body>
-    <div class="col-sm-6">
-        <select id="personToDisplay" multiple onchange="displayImages()">
-            <option value="all">all</option>
-        </select>
-    </div>
-    
-    <div class="col-sm-6">
-        <select id="imageToDisplay" multiple onchange="displayImages()">
-            <option value="Butterfly">Бабочка</option>
-            <option value="Triangle">Треугольники</option>
-            <option value="Square">Квадрат</option>
-        </select>
-    </div>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="selectize/css/selectize.css">
+        <link rel="stylesheet" type="text/css" href="css/third.css">
+        <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="selectize/js/standalone/selectize.js"></script>
+        <script src="fullscreen/screenfull.min.js"></script>
+    </head>
+    <body>
+        <div class="container-fluid">
 
-    <div class="container-fluid" id="imagesContainer">
+            <div class="col-sm-2">
 
-    </div>
-    
-<script src="js/third.js"></script>
-</body>
+
+                <ul class="nav nav-pills  nav-stacked" style="padding-top:30px;">
+                    <li role="presentation"><a href="main.html">First</a></li>
+                    <li role="presentation"><a href="second.html">Second</a></li>
+                    <li role="presentation" class="active"><a href="third.html">Third</a></li>
+                    <li role="presentation"><a href="setup.html">Setup</a></li>
+                </ul>
+
+
+            </div>
+
+            <div class="col-sm-10" style="padding-top:50px">
+
+
+                <div class="col-sm-6">
+                    <select id="personToDisplay" multiple onchange="displayImages()">
+                        <option value="all">all</option>
+                    </select>
+                </div>
+                
+
+                <div class="col-sm-6">
+                    <select id="imageToDisplay" multiple onchange="displayImages()">
+                        <option value="Butterfly">Бабочка</option>
+                        <option value="Triangle">Треугольники</option>
+                        <option value="Square">Квадрат</option>
+                    </select>
+                </div>
+
+
+                <div class="container-fluid" id="imagesContainer">
+                </div>
+
+
+            </div>  
+        </div>
+        <script src="js/third.js"></script>
+    </body>
 </html>
