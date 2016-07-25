@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+    <head>
+        <title>preview</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta charset="utf-8">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap-theme.min.css">
+        <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
+        <script type="text/javascript" src="bootstrap/js/bootstrap.min.js"></script>
+    </head>
+    <body>
+        <div class="modal fade" tabindex="-1" role="dialog" id='setting-modal'>
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h4 class="modal-title">Modal title</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form>
+                            <div class="form-group">
+                                <label for="peopleTested">Результатов:</label>
+                                <input id="peopleTested" type="number" value = 1 name="peopleTested" style="width:90%">
+                            </div>
+                            <div class="form-group">
+                                <label for="selectedResults">Изображения:</label>
+                                <div>
+                                    <div class="col-xs-2">
+                                        <input type="checkbox" name="allImages" id='0' checked="checked">
+                                        all
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <input type="checkbox" name="selectedResults" value="1" id="1"> 1
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="2" id="2"> 2
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="3" id="3"> 3
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="4" id="4"> 4
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="5" id="5"> 5
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="6" id="6"> 6
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <input type="checkbox" name="selectedResults" value="12" id="7"> 12
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="13" id="8"> 13
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="15" id="9"> 15
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="16" id="10"> 16
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="23" id="11"> 23
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="24" id="12"> 24
+                                        <br>
+                                        
+                                        
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <input type="checkbox" name="selectedResults" value="26" id="13"> 26
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="34" id="14"> 34
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="35" id="15"> 35
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="45" id="16"> 45
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="46" id="17"> 46
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="56" id="18"> 56
+                                    </div>
+                                    
+                                    <div class="col-xs-2">
+                                        <input type="checkbox" name="selectedResults" value="123" id="19"> 123
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="126" id="20"> 126
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="135" id="21"> 135
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="156" id="22"> 156
+                                        
+                                    </div>
+                                    <div class="col-xs-2">
+                                        <input type="checkbox" name="selectedResults" value="234" id="23"> 234
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="256" id="24"> 256
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="345" id="25"> 345
+                                        <br>
+                                        <input type="checkbox" name="selectedResults" value="456" id="26"> 456
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                        <br>
+                        <br>
+                        <p style="padding-bottom:60px"></p>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn btn-primary" onclick="save()">Save changes</a>
+                    </div>
+                    </div><!-- /.modal-content -->
+                    </div><!-- /.modal-dialog -->
+                    </div><!-- /.modal -->
+                </body>
+                <script src="js/setup.js"></script>
+            </html>
