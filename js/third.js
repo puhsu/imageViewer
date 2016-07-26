@@ -1,6 +1,25 @@
 var peopleTested = localStorage.getItem("peopleTested");
 var selectElement = document.getElementById("personToDisplay");
 
+var imagesToShowInSelect = localStorage.getItem('selectedResults').split(' ');
+imagesToShowInSelect.pop();
+console.log(imagesToShowInSelect);
+
+var selectElementImages = document.getElementById("imageToDisplay");
+
+while(selectElementImages.firstChild) {
+    selectElementImages.removeChild(selectElementImages.firstChild);
+}
+
+
+for(var i = 0; i < imagesToShowInSelect.length; i++) {
+    var option = document.createElement('option');
+    option.value = imagesToShowInSelect[i];
+    option.text = imagesToShowInSelect[i];
+    selectElementImages.add(option);
+}
+
+
 for (var i = 1; i <= peopleTested; i++) {
     var option = document.createElement('option');
     option.value = i;
@@ -59,7 +78,7 @@ function displayImages() {
 
 
                     var image = document.createElement('img');
-                    image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + "/" + imageToDisplay[i] + ".png";
+                    image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + ".png";
                     image.className = "image";
                     var id = imageToDisplay[i] + ((j + 1) + '');
                     image.id = id;
@@ -93,7 +112,7 @@ function displayImages() {
 
 
                         var image = document.createElement('img');
-                        image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + "/" + imageToDisplay[i] + ".png";
+                        image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + ".png";
                         image.className = "image";
                         var id = imageToDisplay[i] + ((j + 1) + '');
                         image.id = id;
