@@ -16,7 +16,7 @@ function save() {
     var checkboxAll = document.getElementById('0');
 
     if (checkboxAll.checked) {
-        localStorage.setItem('selectedResults', '1 2 3 4 5 6 12 13 15 16 23 24 26 34 35 45 46 56 123 125 126 135 234 246 345 456');
+        localStorage.setItem('selectedResults', '1 2 3 4 5 6 12 13 15 16 23 24 26 34 35 45 46 56 123 125 126 135 234 246 345 456 ');
     } else {
         var str = '';
         for (var i = 1; i <= 26; i++) {
