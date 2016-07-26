@@ -2,8 +2,12 @@
     width: 100%;
     background-color: transparent;
 }
+.image::webkit-full-screen {
+    width:;
+}
+
 .container {
-    /*width: 49%;*/
+    width: 49%;
     position: relative;
     display: inline-block;
     padding-top: 30px;

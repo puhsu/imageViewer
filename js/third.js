@@ -74,9 +74,7 @@ function displayImages() {
                     button.onclick = (function(idParam) {
                         return function() {
                             var img = document.getElementById(idParam);
-                            if (screenfull.enabled) {
-                                screenfull.request(img);
-                            };
+                            img.webkitRequestFullscreen();
                         }
                     })(id);
 

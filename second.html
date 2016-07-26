@@ -6,9 +6,11 @@
         <meta charset="utf-8">
         <link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="selectize/css/selectize.css">
+        <link rel="stylesheet" type="text/css" href="css/third.css">
         <script   src="https://code.jquery.com/jquery-2.2.4.min.js"   integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44="   crossorigin="anonymous"></script>
         <script src="bootstrap/js/bootstrap.min.js"></script>
         <script src="selectize/js/standalone/selectize.js"></script>
+        <script src="fullscreen/screenfull.min.js"></script>
     </head>
     <body>
         <div class="container-fluid" style="padding-top:5px">
@@ -30,14 +32,19 @@
 
                     </div>
                     <div class="form-group col-sm-4">
-                        <select id="images" multiple onchange="">
+                        <select id="images" multiple onchange="displayImages()">
+                            <option value="all">all</option>
                         </select>
                     </div>
                     <div class="form-group col-sm-4">
-                        <select id="viewMode" multiple onchange="">
+                        <select id="viewMode" multiple onchange="displayImages()">
                             <option value="single" selected>single</option>
                             <option value="polar">polar</option>
                         </select>
+                    </div>
+
+                    <div id="imagesContainer">
+                        
                     </div>
 
                 </form>
