@@ -5,6 +5,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <!--css libs-->
+        <link rel="stylesheet" href="libs/dialog-polyfill/dialog-polyfill.css">
         <link rel="stylesheet" href="libs/mdl/material.min.css">
         <!---->
         <!--./styles-->
@@ -52,143 +53,144 @@
                     </div>
                 </div>
                 <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--3-col mdl-cell--8-col-tablet">
-                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-all">
-                            <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input">
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-all" >
+                            <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input" value="all" onchange="checkUncheckAll()">
                             <span class="mdl-checkbox__label">Все изображения</span>
                         </label>
-                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-butterfly">
-                            <input type="checkbox" id="checkbox-butterfly" class="mdl-checkbox__input">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-Butterfly">
+                            <input type="checkbox" id="checkbox-Butterfly" class="mdl-checkbox__input" value="Butterfly">
                             <span class="mdl-checkbox__label">Бабочка</span>
                         </label>
-                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-triangles">
-                            <input type="checkbox" id="checkbox-triangles" class="mdl-checkbox__input">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-Triangle">
+                            <input type="checkbox" id="checkbox-Triangle" class="mdl-checkbox__input" value="Triangle">
                             <span class="mdl-checkbox__label">Треугольники</span>
                         </label>
-                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-square">
-                            <input type="checkbox" id="checkbox-square" class="mdl-checkbox__input">
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-Square">
+                            <input type="checkbox" id="checkbox-Square" class="mdl-checkbox__input" value="Square">
                             <span class="mdl-checkbox__label">Квадрат</span>
                         </label>
                     </div>
                     
                     <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet">
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-1">
-                            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" value="1">
                             <span class="mdl-checkbox__label">1</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-2">
-                            <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-2" class="mdl-checkbox__input" value="2">
                             <span class="mdl-checkbox__label">2</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-3">
-                            <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-3" class="mdl-checkbox__input" value="3">
                             <span class="mdl-checkbox__label">3</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-4">
-                            <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-4" class="mdl-checkbox__input" value="4">
                             <span class="mdl-checkbox__label">4</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-5">
-                            <input type="checkbox" id="checkbox-5" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-5" class="mdl-checkbox__input" value="5">
                             <span class="mdl-checkbox__label">5</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-6">
-                            <input type="checkbox" id="checkbox-6" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-6" class="mdl-checkbox__input" value="6">
                             <span class="mdl-checkbox__label">6</span>
                         </label>
                     </div>
                     <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet">
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-12">
-                            <input type="checkbox" id="checkbox-12" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-12" class="mdl-checkbox__input" value="12">
                             <span class="mdl-checkbox__label">12</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-13">
-                            <input type="checkbox" id="checkbox-13" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-13" class="mdl-checkbox__input" value="13">
                             <span class="mdl-checkbox__label">13</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-15">
-                            <input type="checkbox" id="checkbox-15" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-15" class="mdl-checkbox__input" value="15">
                             <span class="mdl-checkbox__label">15</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-16">
-                            <input type="checkbox" id="checkbox-16" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-16" class="mdl-checkbox__input" value="16">
                             <span class="mdl-checkbox__label">16</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-23">
-                            <input type="checkbox" id="checkbox-23" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-23" class="mdl-checkbox__input" value="23">
                             <span class="mdl-checkbox__label">23</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-24">
-                            <input type="checkbox" id="checkbox-24" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-24" class="mdl-checkbox__input" value="24">
                             <span class="mdl-checkbox__label">24</span>
                         </label>
                     </div>
                     <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet">
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-26">
-                            <input type="checkbox" id="checkbox-26" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-26" class="mdl-checkbox__input" value="26">
                             <span class="mdl-checkbox__label">26</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-34">
-                            <input type="checkbox" id="checkbox-34" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-34" class="mdl-checkbox__input" value="34">
                             <span class="mdl-checkbox__label">34</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-35">
-                            <input type="checkbox" id="checkbox-35" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-35" class="mdl-checkbox__input" value="35">
                             <span class="mdl-checkbox__label">35</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-45">
-                            <input type="checkbox" id="checkbox-45" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-45" class="mdl-checkbox__input" value="45">
                             <span class="mdl-checkbox__label">45</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-46">
-                            <input type="checkbox" id="checkbox-46" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-46" class="mdl-checkbox__input" value="46">
                             <span class="mdl-checkbox__label">46</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-56">
-                            <input type="checkbox" id="checkbox-56" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-56" class="mdl-checkbox__input" value="56">
                             <span class="mdl-checkbox__label">56</span>
                         </label>
                     </div>
                     <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet">
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-123">
-                            <input type="checkbox" id="checkbox-123" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-123" class="mdl-checkbox__input" value="123">
                             <span class="mdl-checkbox__label">123</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-126">
-                            <input type="checkbox" id="checkbox-126" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-126" class="mdl-checkbox__input" value="126">
                             <span class="mdl-checkbox__label">126</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-135">
-                            <input type="checkbox" id="checkbox-135" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-135" class="mdl-checkbox__input" value="135">
                             <span class="mdl-checkbox__label">135</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-156">
-                            <input type="checkbox" id="checkbox-156" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-156" class="mdl-checkbox__input" value="156">
                             <span class="mdl-checkbox__label">156</span>
                         </label>
+                    </div>
+                    <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet">
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-234">
-                            <input type="checkbox" id="checkbox-234" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-234" class="mdl-checkbox__input" value="234">
                             <span class="mdl-checkbox__label">234</span>
                         </label>
-                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-256">
-                            <input type="checkbox" id="checkbox-256" class="mdl-checkbox__input">
-                            <span class="mdl-checkbox__label">256</span>
+                        <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-246">
+                            <input type="checkbox" id="checkbox-246" class="mdl-checkbox__input" value="246">
+                            <span class="mdl-checkbox__label">246</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-345">
-                            <input type="checkbox" id="checkbox-345" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-345" class="mdl-checkbox__input" value="345">
                             <span class="mdl-checkbox__label">345</span>
                         </label>
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-456">
-                            <input type="checkbox" id="checkbox-456" class="mdl-checkbox__input">
+                            <input type="checkbox" id="checkbox-456" class="mdl-checkbox__input" value="456">
                             <span class="mdl-checkbox__label">456</span>
                         </label>
                     </div>
-                    
                 </div>
                 <div class="mdl-grid">
                     <div class="mdl-cell mdl-cell--9-col"></div>
                     <div class="mdl-cell mdl-cell--3-col">
-                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent">
+                        <button class="mdl-button mdl-js-button mdl-button--raised mdl-button--accent" onclick="saveCurrentSettings()">
                         Сохранить
                         </button>
                     </div>
@@ -196,10 +198,24 @@
             </div>
             </main>
         </div>
-        
+
+        <dialog class="mdl-dialog">
+            <h4 class="mdl-dialog__title">Ошибка</h4>
+            <div class="mdl-dialog__content">
+                <p></p>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button close">Закрыть</button>
+            </div>
+        </dialog>
+
         <!--js libs-->
+        <script src="libs/dialog-polyfill/dialog-polyfill.js"></script>
         <script src="libs/mdl/material.min.js"></script>
         <script src="libs/jquery/jquery.min.js"></script>
+        <!---->
+        <!--./scripts-->
+        <script src="scripts/settings.js"></script>
         <!---->
     </body>
 </html>
