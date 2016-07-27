@@ -140,6 +140,12 @@ function displayImages() {
                 }
             }
         }
+        $('body').css("background", "");
+    } else {
+        $('body').css({
+            'background-image': 'url(images/neurobox.png)',
+            'background-size': 'cover'
+        });
     }
 }
 

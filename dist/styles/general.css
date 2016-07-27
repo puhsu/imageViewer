@@ -59,8 +59,7 @@
 }
 /********/
 .image {
-
-    max-width: 100%;
+    max-width: 90%;
     background-color: transparent;
 }
 
@@ -86,4 +85,31 @@
     /*padding: 5px 5px;*/
     text-align: center;
     display: inline-block;
+}
+
+.black-color {
+    background-color: #2D2E2F;
+}
+.red-color {
+    background-color: #C93C43;
+}
+.red-color:hover {
+    background-color: #C93C43;
+}
+.light-grey-color {
+    background: -webkit-linear-gradient(left top, #D6D7D8, #68696A);
+}
+.dark-grey-color {
+    background-color: #68696A;
+}
+.white-color {
+    background-color: #FFFFFF;
+}
+
+.white-text {
+    color: #FFFFFF;
+}
+
+*:fullscreen, *:-webkit-full-screen, *:-moz-full-screen {
+    background-color: rgba(255,255,255,0);
 }

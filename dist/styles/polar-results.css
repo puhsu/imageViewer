@@ -1,5 +1,5 @@
 .image {
-    width: 49%;
+    width: 45%;
     background-color: transparent;
 }
 .image::webkit-full-screen {
@@ -13,21 +13,18 @@
     display: inline-block;
     padding-top: 30px;
 }
+.container:first-child {
+    padding-left: 5%;
+}
 .container:webkit-full-screen {
     height: 100%;
 }
-.button {
+.buttonPolar {
     position: absolute;
-    z-index: 1;
-    top: 40px;
-    left: 60px;
-    width: 30px;
-    height: 30px;
-    border-radius: 5px;
-    background-color: grey;
-    border: none;
+    background: transparent;
     color: white;
-    /*padding: 5px 5px;*/
-    text-align: center;
-    display: inline-block;
+    font-size: 15px;
+    border-bottom:2px solid white;
+    bottom:0px;
+    left:47%;
 }

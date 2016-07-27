@@ -123,9 +123,13 @@ function displayImagesPolar() {
                         var id = imageToDisplay[i] + personToDisplay[j];
                         container.id = id;
 
-                        var button = document.createElement('button');
-                        button.className = 'button';
-                        button.innerHTML = personToDisplay[j];
+                        var button = document.createElement('div');
+                        button.className = 'buttonPolar';
+                        var text = document.createElement('p');
+                        text.innerHTML = '<i class="material-icons">person</i>' + personToDisplay[j] + '<i class="material-icons">camera</i>' + imageToDisplay[i];
+                        var line = document.createElement('span');
+                        button.appendChild(text);
+                        button.appendChild(line);
 
 
 
@@ -145,6 +149,12 @@ function displayImagesPolar() {
                     }
                 }
         }
+        $('body').css("background", "");
+    } else {
+        $('body').css({
+            'background-image': 'url(images/neurobox.png)',
+            'background-size': 'cover'
+        });
     }
 }
 
