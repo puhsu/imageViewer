@@ -1,31 +1,28 @@
 var peopleTested = localStorage.getItem("peopleTested");
-var selectElement = document.getElementById("personToDisplay");
-
 var imagesToShowInSelect = localStorage.getItem('selectedResults').split(' ');
 imagesToShowInSelect.pop();
 console.log(imagesToShowInSelect);
 
+var selectElement = document.getElementById("personToDisplay");
 var selectElementImages = document.getElementById("imageToDisplay");
 
 while(selectElementImages.firstChild) {
     selectElementImages.removeChild(selectElementImages.firstChild);
 }
-
-
 for(var i = 0; i < imagesToShowInSelect.length; i++) {
     var option = document.createElement('option');
     option.value = imagesToShowInSelect[i];
     option.text = imagesToShowInSelect[i];
     selectElementImages.add(option);
 }
-
-
 for (var i = 1; i <= peopleTested; i++) {
     var option = document.createElement('option');
     option.value = i;
     option.text = i;
     selectElement.add(option);
 }
+
+
 var isThereAll = 0;
 var personToDisplaySelectObj = $('#personToDisplay').selectize({
     delimiter: ',',
@@ -60,8 +57,7 @@ $('#imageToDisplay').selectize({
 });
 
 
-
-function displayImages() {
+function displayImagesPolar() {
     var imagesContainer = document.getElementById('imagesContainer');
     while (imagesContainer.firstChild) {
         imagesContainer.removeChild(imagesContainer.firstChild);
@@ -75,7 +71,7 @@ function displayImages() {
                 for (var j = 0; j < len; j++) {
 
                     var container = document.createElement('div');
-                    container.className = "container";
+                    container.className = "container col-md-6 col-sm-12";
 
 
                     var image = document.createElement('img');
@@ -109,14 +105,20 @@ function displayImages() {
 
                         var container = document.createElement('div');
 
-                        container.className = "container col-md-6 col-sm-12";
+                        container.className = "container";
 
 
                         var image = document.createElement('img');
+                        var polarimage = document.createElement('img');
+                        
                         image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + ".png";
+                        polarimage.src = "TestResult/" + (j + 1) + "/Layout/" + changeToPolarNum(imageToDisplay[i]) + ".png";
+
                         image.className = "image";
+                        polarimage.className = "image";
+
                         var id = imageToDisplay[i] + ((j + 1) + '');
-                        image.id = id;
+                        container.id = id;
 
                         var button = document.createElement('button');
                         button.className = 'button';
@@ -133,6 +135,7 @@ function displayImages() {
                         })(id);
 
                         container.appendChild(image);
+                        container.appendChild(polarimage);
                         container.appendChild(button);
 
                         imagesContainer.appendChild(container);
@@ -141,6 +144,24 @@ function displayImages() {
             }
         }
     }
+}
+
+
+
+
+
+function changeToPolarNum(string) {
+    var result = '';
+    for(var i = 0; i < string.length; i++) {
+        if(string[i] === '1') result += '4';
+        else if(string[i] === '2') result += '5';
+        else if(string[i] === '3') result += '6';
+        else if(string[i] === '4') result += '1';
+        else if(string[i] === '5') result += '2';
+        else result += '3';
+    }
+    result = result.split('').sort().join('');
+    return result;
 }
 
 function showSettingsModal() {
