@@ -113,3 +113,18 @@
 *:fullscreen, *:-webkit-full-screen, *:-moz-full-screen {
     background-color: rgba(255,255,255,0);
 }
+.is-checked .mdl-checkbox__tick-outline {
+    background-color: #C93C43 !important;
+}
+
+.is-checked .mdl-checkbox__box-outline {
+    border-color: #C93C43 !important;
+}
+
+.is-focused .mdl-textfield__label {
+    color: #2D2E2F !important;
+}
+
+.is-focused .mdl-textfield__input span{
+    background-color: #C93C43 !important;
+}
