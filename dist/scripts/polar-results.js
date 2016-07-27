@@ -71,14 +71,17 @@ function displayImagesPolar() {
                 for (var j = 0; j < len; j++) {
 
                     var container = document.createElement('div');
-                    container.className = "container col-md-6 col-sm-12";
+                    container.className = "container";
 
 
                     var image = document.createElement('img');
+                    var polarimage = document.createElement('img');
                     image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + ".png";
+                    polarimage.src = "TestResult/" + (j + 1) + "/Layout/" + changeToPolarNum(imageToDisplay[i]) + ".png";
                     image.className = "image";
+                    polarimage.className = "image";
                     var id = imageToDisplay[i] + ((j + 1) + '');
-                    image.id = id;
+                    container.id = id;
 
                     var button = document.createElement('button');
                     button.className = 'button';
@@ -95,12 +98,12 @@ function displayImagesPolar() {
                     })(id);
 
                     container.appendChild(image);
+                    container.appendChild(polarimage);
                     container.appendChild(button);
 
                     imagesContainer.appendChild(container);
                 }
             } else {
-                for (var i = 0; i < imageToDisplay.length; i++) {
                     for (var j = 0; j < personToDisplay.length; j++) {
 
                         var container = document.createElement('div');
@@ -111,13 +114,13 @@ function displayImagesPolar() {
                         var image = document.createElement('img');
                         var polarimage = document.createElement('img');
                         
-                        image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + ".png";
-                        polarimage.src = "TestResult/" + (j + 1) + "/Layout/" + changeToPolarNum(imageToDisplay[i]) + ".png";
+                        image.src = "TestResult/" + personToDisplay[j] + "/Layout/" + imageToDisplay[i] + ".png";
+                        polarimage.src = "TestResult/" + personToDisplay[j] + "/Layout/" + changeToPolarNum(imageToDisplay[i]) + ".png";
 
                         image.className = "image";
                         polarimage.className = "image";
 
-                        var id = imageToDisplay[i] + ((j + 1) + '');
+                        var id = imageToDisplay[i] + personToDisplay[j];
                         container.id = id;
 
                         var button = document.createElement('button');
@@ -141,7 +144,6 @@ function displayImagesPolar() {
                         imagesContainer.appendChild(container);
                     }
                 }
-            }
         }
     }
 }
