@@ -1,13 +1,14 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Главная</title>
+        <title>Результаты</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
         <!--./libs/*.css-->
+        <link rel="stylesheet" href="libs/dialog-polyfill/dialog-polyfill.css">
         <link rel="stylesheet" href="libs/mdl/material.min.css">
+        <link rel="stylesheet" href="libs/selectize/css/selectize.css">
         <!---->
-
         <!--./styles-->
         <link rel="stylesheet" href="styles/general.css">
         <!---->
@@ -17,8 +18,13 @@
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
             <header class="mdl-layout__header">
                 <div class="mdl-layout__header-row">
-                    <span class="mdl-layout-title">Заголовок (логотип)</span>
+                    <span class="mdl-layout-title">Результаты</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <i class="material-icons" onclick="showSettingsModal()" style="cursor:pointer">settings</i>                    
                 </div>
+                                    
+                        
+                    
             </header>
             <div class="mdl-layout__drawer">
                 <span class="mdl-layout-title">Заголовок</span>
@@ -30,21 +36,43 @@
                 </nav>
             </div>
             <main class="mdl-layout__content">
-                <div class="page-content">
+            <div class="page-content">
                 
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col" id="imagesContainer">
+                        
+                    </div>
                 </div>
+            </div>
             </main>
         </div>
 
-
-
+        <dialog class="mdl-dialog" style="width:500px">
+            <h4 class="mdl-dialog__title">Настройки</h4>
+            <div class="mdl-dialog__content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                        <select id="personToDisplay" multiple onchange="displayImages()">
+                            <option value="all">all</option>
+                        </select>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                        <select id="imageToDisplay" multiple onchange="displayImages()">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button close">Закрыть</button>
+            </div>
+        </dialog>
         
         <!-- js libs -->
+        <script src="libs/dialog-polyfill/dialog-polyfill.js"></script>
         <script src="libs/mdl/material.min.js"></script>
         <script src="libs/jquery/jquery.min.js"></script>
         <script src="libs/selectize/js/selectize.min.js"></script>
         <!---->
-
         <!--personal scripts-->
         <script src="scripts/results.js"></script>
         <!---->

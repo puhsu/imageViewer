@@ -22,7 +22,7 @@ function saveCurrentSettings() {
 
     var str = '';
 
-    for (var i = 0; i < 29; i++) {
+    for (var i = 0; i < 29; i++) { 
         var imageNum = document.getElementById('checkbox-' + selectedResultsList[i]);
         if (imageNum.checked) {
             str += imageNum.value;
