@@ -77,9 +77,15 @@ function displayImages() {
                     var container = document.createElement('div');
                     container.className = "container";
 
-
                     var image = document.createElement('img');
-                    image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + ".png";
+
+                    if (j < 9) {
+                    image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j+1) + ".png";
+                    }
+                    else {
+                    image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j+1) + ".png";
+                    }
+
                     image.className = "image";
                     var id = imageToDisplay[i] + ((j + 1) + '');
                     image.id = id;
@@ -113,8 +119,14 @@ function displayImages() {
 
 
                         var image = document.createElement('img');
-                        image.src = "TestResult/" + (j + 1) + "/Layout/" + imageToDisplay[i] + ".png";
-                        image.className = "image";
+                        
+                        if (j < 9) {
+                        image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j+1) + ".png";
+                        }
+                        else {
+                        image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j+1) + ".png";
+                        }
+                                                image.className = "image";
                         var id = imageToDisplay[i] + ((j + 1) + '');
                         image.id = id;
 
