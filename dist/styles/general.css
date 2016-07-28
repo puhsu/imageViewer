@@ -92,6 +92,7 @@
 .black-color {
     background-color: #2D2E2F;
 }
+
 .red-color {
     background-color: #CA3C43;
 }
@@ -99,7 +100,7 @@
     background-color: #C93C43;
 }
 .light-grey-color {
-    background: -webkit-linear-gradient(left top, #D6D7D8, #68696A);
+    background: -webkit-linear-gradient(left top, #68696A, #C5C7D8);
 }
 .dark-grey-color {
     background-color: #68696A;

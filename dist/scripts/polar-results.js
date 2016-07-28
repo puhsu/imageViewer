@@ -170,7 +170,7 @@ function displayImagesPolar() {
         $('body').css("background", "");
     } else {
         $('body').css({
-            'background-image': 'url(images/neurobox.png)',
+            'background-image': 'url(images/neurobox.gif)',
             'background-size': 'cover'
         });
     }

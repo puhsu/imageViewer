@@ -162,10 +162,10 @@ function displayImages() {
                 }
             }
         }
-        $('body').css("background", "");
+        $('body').css("background", "black");
     } else {
         $('body').css({
-            'background-image': 'url(images/neurobox.png)',
+            'background-image': 'url(images/neurobox.gif)',
             'background-size': 'cover'
         });
     }
