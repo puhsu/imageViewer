@@ -14,7 +14,7 @@
     padding-top: 30px;
 }
 .container:first-child {
-    padding-left: 5%;
+    /*padding-left: 5%;*/
 }
 .container:webkit-full-screen {
     height: 100%;
@@ -27,4 +27,25 @@
     border-bottom:2px solid white;
     bottom:0px;
     left:47%;
+}
+
+.label-container {
+    width: 320px;
+    cursor:pointer;
+    margin:0 auto !important;
+}
+.label-container * {
+    color: white;
+}
+.label-text {
+    font-size: 20px;
+    padding-top: 2px;
+}
+.label-container-border {
+    margin-top: -30px;
+    margin-left: 10px;
+    display: block;
+    width:120px;
+    height:2px;
+    background:white;
 }
