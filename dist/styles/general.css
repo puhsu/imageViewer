@@ -1,13 +1,13 @@
-/* 
+/*
     adding fonts and icons
 */
 @font-face {
     font-family: 'Material Icons';
     font-style: normal;
     font-weight: 400;
-    src: 
+    src:
         url(../fonts/material-design-icons/iconfont/MaterialIcons-Regular.eot); /* For IE6-8 */
-    src: 
+    src:
         local('Material Icons'),
         local('MaterialIcons-Regular'),
         url(../fonts/material-design-icons/iconfont/MaterialIcons-Regular.woff2) format('woff2'),
@@ -16,7 +16,7 @@
 }
 
 @font-face {
-    font-family: 'Harmonia Sans Pro Cyr'; 
+    font-family: 'Harmonia Sans Pro Cyr';
     font-style: normal;
     font-weight: 400;
     src:
@@ -25,7 +25,7 @@
 }
 
 @font-face {
-    font-family: 'Harmonia Sans Pro Cyr'; 
+    font-family: 'Harmonia Sans Pro Cyr';
     font-style: italic;
     font-weight: 400;
     src:
@@ -37,7 +37,7 @@
     font-family: 'Harmonia Sans Pro Cyr';
     font-style: normal;
     font-weight: 300;
-    src: 
+    src:
         local('Harmonia Sans Pro Cyr'),
         url(../fonts/HarmoniaSansCyr/HarmoniaSansProCyr-Light.otf);
 }
@@ -46,12 +46,12 @@
     font-family: 'Harmonia Sans Pro Cyr';
     font-style: normal;
     font-weight: 700;
-    src: 
+    src:
         local('Harmonia Sans Pro Cyr'),
         url(../fonts/HarmoniaSansCyr/HarmoniaSansProCyr-Bold.otf);
 }
 
-* :not(i) { 
+* :not(i) {
     /*
         change font-family of all elements except "<i></i>" tag
     */
@@ -59,17 +59,19 @@
 }
 /********/
 .image {
-    max-width: 90%;
+    max-width: 100%;
     background-color: transparent;
 }
 
 .container {
-    width: 49%;
+    width: 50%;
     position: relative;
-    display: inline-block;
-    padding-top: 30px;
+    display: inline-block;;
+    padding-bottom: 50px;
     overflow: hidden;
+    text-align:center;
 }
+
 
 .button {
     position: absolute;

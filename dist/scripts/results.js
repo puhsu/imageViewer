@@ -119,14 +119,15 @@ function displayImages() {
 
 
                         var image = document.createElement('img');
-                        
+
                         if (j < 9) {
                         image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j+1) + ".png";
                         }
                         else {
                         image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j+1) + ".png";
                         }
-                                                image.className = "image";
+
+                        image.className = "image";
                         var id = imageToDisplay[i] + ((j + 1) + '');
                         image.id = id;
 
