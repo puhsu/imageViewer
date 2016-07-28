@@ -7,12 +7,12 @@ console.log(imagesToShowInSelect);
 
 var selectElementImages = document.getElementById("imageToDisplay");
 
-while(selectElementImages.firstChild) {
+while (selectElementImages.firstChild) {
     selectElementImages.removeChild(selectElementImages.firstChild);
 }
 
 
-for(var i = 0; i < imagesToShowInSelect.length; i++) {
+for (var i = 0; i < imagesToShowInSelect.length; i++) {
     var option = document.createElement('option');
     option.value = imagesToShowInSelect[i];
     option.text = imagesToShowInSelect[i];
@@ -80,24 +80,28 @@ function displayImages() {
                     var image = document.createElement('img');
 
                     if (j < 9) {
-                    image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j+1) + ".png";
-                    }
-                    else {
-                    image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j+1) + ".png";
+                        image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j + 1) + ".png";
+                    } else {
+                        image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j + 1) + ".png";
                     }
 
                     image.className = "image";
                     var id = imageToDisplay[i] + ((j + 1) + '');
-                    image.id = id;
+                    container.id = id;
 
-                    var button = document.createElement('button');
-                    button.className = 'button';
-                    button.innerHTML = (j + 1) + '';
-
-
-
-
-                    button.onclick = (function(idParam) {
+                    var labelContainer = document.createElement('div');
+                    labelContainer.className = 'mdl-grid label-container';
+                    labelContainer.innerHTML =
+                        '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                        '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">person</i></div>' +
+                        '<div class="mdl-cell mdl-cell--2-col"><p class="label-text">1</p></div>' +
+                        '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
+                        '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
+                        '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                        '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
+                    labelContainer.querySelector('p:first-of-type').innerHTML = (j + 1);
+                    labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i];
+                    labelContainer.onclick = (function(idParam) {
                         return function() {
                             var img = document.getElementById(idParam);
                             img.webkitRequestFullscreen();
@@ -105,7 +109,7 @@ function displayImages() {
                     })(id);
 
                     container.appendChild(image);
-                    container.appendChild(button);
+                    container.appendChild(labelContainer);
 
                     imagesContainer.appendChild(container);
                 }
@@ -121,32 +125,37 @@ function displayImages() {
                         var image = document.createElement('img');
 
                         if (j < 9) {
-                        image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j+1) + ".png";
-                        }
-                        else {
-                        image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j+1) + ".png";
+                            image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j + 1) + ".png";
+                        } else {
+                            image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j + 1) + ".png";
                         }
 
                         image.className = "image";
                         var id = imageToDisplay[i] + ((j + 1) + '');
-                        image.id = id;
+                        container.id = id;
 
-                        var button = document.createElement('button');
-                        button.className = 'button';
-                        button.innerHTML = personToDisplay[j];
-
-
-
-
-                        button.onclick = (function(idParam) {
+                        var labelContainer = document.createElement('div');
+                        labelContainer.className = 'mdl-grid label-container';
+                        labelContainer.innerHTML =
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">person</i></div>' +
+                            '<div class="mdl-cell mdl-cell--2-col"><p class="label-text">1</p></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
+                            '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
+                        labelContainer.querySelector('p:first-of-type').innerHTML = personToDisplay[j];
+                        labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i];
+                        labelContainer.onclick = (function(idParam) {
                             return function() {
                                 var img = document.getElementById(idParam);
                                 img.webkitRequestFullscreen();
                             }
                         })(id);
 
+
                         container.appendChild(image);
-                        container.appendChild(button);
+                        container.appendChild(labelContainer);
 
                         imagesContainer.appendChild(container);
                     }

@@ -1,0 +1,31 @@
+.container {
+    max-width: 100%;
+    margin:0 auto;
+    background-color: transparent;
+}
+.container:-webkit-full-screen {
+    margin-left:25%;
+}
+.label-container {
+    margin-top: -50px;
+    width: 400px;
+    cursor:pointer;
+    margin:0 auto !important;
+}
+.label-container * {
+    color: white;
+}
+.label-text {
+    font-size: 15px;
+    padding-top: 2px;
+}
+.label-container-border {
+    display: none;
+    display: none;
+    margin:0 auto;
+    margin-top: -30px;
+    display: block;
+    max-width:100%;
+    height:1px;
+    background:white;
+}

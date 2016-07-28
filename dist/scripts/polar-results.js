@@ -89,23 +89,28 @@ function displayImagesPolar() {
                     var id = imageToDisplay[i] + ((j + 1) + '');
                     container.id = id;
 
-                    var button = document.createElement('button');
-                    button.className = 'button';
-                    button.innerHTML = (j + 1) + '';
+                    var labelContainer = document.createElement('div');
+                        labelContainer.className = 'mdl-grid label-container';
+                        labelContainer.innerHTML = 
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">person</i></div>' +
+                            '<div class="mdl-cell mdl-cell--2-col"><p class="label-text">1</p></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
+                            '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
+                        labelContainer.querySelector('p:first-of-type').innerHTML = (j+1);
+                        labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i] + "/" + changeToPolarNum(imageToDisplay[i]);
+                        labelContainer.onclick = (function(idParam) {
+                            return function() {
+                                var img = document.getElementById(idParam);
+                                img.webkitRequestFullscreen();
+                            }
+                        })(id);
 
-
-
-
-                    button.onclick = (function(idParam) {
-                        return function() {
-                            var img = document.getElementById(idParam);
-                            img.webkitRequestFullscreen();
-                        }
-                    })(id);
-
-                    container.appendChild(image);
-                    container.appendChild(polarimage);
-                    container.appendChild(button);
+                        container.appendChild(image);
+                        container.appendChild(polarimage);
+                        container.appendChild(labelContainer);
 
                     imagesContainer.appendChild(container);
                 }
@@ -121,12 +126,12 @@ function displayImagesPolar() {
                         var polarimage = document.createElement('img');
 
                         if (j < 9) {
-                        image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j+1) + ".png";
-                        polarimage.src = "TestResult/000" + (j + 1) + "/" + changeToPolarNum(imageToDisplay[i]) + ".000" + (j+1) + ".png";
+                        image.src = "TestResult/000" + personToDisplay[j] + "/" + imageToDisplay[i] + ".000" +  personToDisplay[j] + ".png";
+                        polarimage.src = "TestResult/000" + personToDisplay[j] + "/" + changeToPolarNum(imageToDisplay[i]) + ".000" + personToDisplay[j] + ".png";
                       }
                       else {
-                        image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j+1) + ".png";
-                        polarimage.src = "TestResult/00" + (j + 1) + "/" + changeToPolarNum(imageToDisplay[i]) + ".00" + (j+1) + ".png";
+                        image.src = "TestResult/00" + personToDisplay[j] + "/" + imageToDisplay[i] + ".00" + personToDisplay[j] + ".png";
+                        polarimage.src = "TestResult/00" + personToDisplay[j] + "/" + changeToPolarNum(imageToDisplay[i]) + ".00" + personToDisplay[j] + ".png";
                       }
 
                         image.className = "image";
@@ -135,18 +140,19 @@ function displayImagesPolar() {
                         var id = imageToDisplay[i] + personToDisplay[j];
                         container.id = id;
 
-                        var button = document.createElement('div');
-                        button.className = 'buttonPolar';
-                        var text = document.createElement('p');
-                        text.innerHTML = '<i class="material-icons">person</i>' + personToDisplay[j] + '<i class="material-icons">camera</i>' + imageToDisplay[i];
-                        var line = document.createElement('span');
-                        button.appendChild(text);
-                        button.appendChild(line);
-
-
-
-
-                        button.onclick = (function(idParam) {
+                        var labelContainer = document.createElement('div');
+                        labelContainer.className = 'mdl-grid label-container';
+                        labelContainer.innerHTML = 
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">person</i></div>' +
+                            '<div class="mdl-cell mdl-cell--2-col"><p class="label-text">1</p></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
+                            '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
+                        labelContainer.querySelector('p:first-of-type').innerHTML = personToDisplay[j];
+                        labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i] + "/" + changeToPolarNum(imageToDisplay[i]);
+                        labelContainer.onclick = (function(idParam) {
                             return function() {
                                 var img = document.getElementById(idParam);
                                 img.webkitRequestFullscreen();
@@ -155,7 +161,7 @@ function displayImagesPolar() {
 
                         container.appendChild(image);
                         container.appendChild(polarimage);
-                        container.appendChild(button);
+                        container.appendChild(labelContainer);
 
                         imagesContainer.appendChild(container);
                     }
