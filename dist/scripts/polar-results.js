@@ -98,9 +98,7 @@ function displayImagesPolar() {
                             '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
                             '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
                             '<div class="mdl-cell mdl-cell--3-col"></div>' +
-                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
-                            '<div class="mdl-cell mdl-cell--6-col"><span class="label-container-border"></span></div>' +
-                            '<div class="mdl-cell mdl-cell--3-col"></div>';
+                            '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
                         labelContainer.querySelector('p:first-of-type').innerHTML = (j+1);
                         labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i] + "/" + changeToPolarNum(imageToDisplay[i]);
                         labelContainer.onclick = (function(idParam) {
@@ -151,9 +149,7 @@ function displayImagesPolar() {
                             '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
                             '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
                             '<div class="mdl-cell mdl-cell--3-col"></div>' +
-                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
-                            '<div class="mdl-cell mdl-cell--6-col"><span class="label-container-border"></span></div>' +
-                            '<div class="mdl-cell mdl-cell--3-col"></div>';
+                            '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
                         labelContainer.querySelector('p:first-of-type').innerHTML = personToDisplay[j];
                         labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i] + "/" + changeToPolarNum(imageToDisplay[i]);
                         labelContainer.onclick = (function(idParam) {
