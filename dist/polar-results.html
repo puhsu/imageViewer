@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html class="light-grey-color">
     <head>
         <title>Полярные результаты</title>
         <meta charset="utf-8">
@@ -15,7 +15,11 @@
         <link rel="stylesheet" href="styles/polar-results.css">
         <!---->
     </head>
-    <body style="background:url(images/neurobox.png); background-size: cover;" class="light-grey-color">
+
+<!-- Uncomment for background image when empty -->
+    <body style="background:url(images/neurobox.png); background-size: cover; background-color: transparent;" class="light-grey-color">
+    <!-- <body class="light-grey-color"> -->
+
         <!-- Always shows a header, even in smaller screens. -->
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
             <header class="mdl-layout__header black-color">
@@ -38,7 +42,7 @@
                 <div class="page-content">
                     <div class="mdl-grid">
                         <div class="mdl-cell mdl-cell--12-col" id="imagesContainer">
-                            
+
                         </div>
                     </div>
                 </div>
@@ -67,7 +71,7 @@
         </dialog>
 
 
-        
+
         <!-- js libs -->
         <script src="libs/dialog-polyfill/dialog-polyfill.js"></script>
         <script src="libs/mdl/material.min.js"></script>
