@@ -170,12 +170,16 @@ function displayImages() {
     } else {
         $('body').css({
             'background-image': 'url(images/neurobox.gif)',
-            'background-size': 'cover'
+            'background-size': 'cover',
+            'background-size':'50%',
+            'background-position':'center 100px',
+            'background-color':'black',
+            'background-repeat':'no-repeat'
         });
         $('#information').css('display', 'none');
     }
-   
-} 
+
+}
 function showSettingsModal() {
     var dialog = document.querySelector('dialog');
     dialogPolyfill.registerDialog(dialog);
