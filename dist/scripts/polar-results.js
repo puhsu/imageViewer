@@ -89,23 +89,30 @@ function displayImagesPolar() {
                     var id = imageToDisplay[i] + ((j + 1) + '');
                     container.id = id;
 
-                    var button = document.createElement('button');
-                    button.className = 'button';
-                    button.innerHTML = (j + 1) + '';
+                    var labelContainer = document.createElement('div');
+                        labelContainer.className = 'mdl-grid label-container';
+                        labelContainer.innerHTML = 
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">person</i></div>' +
+                            '<div class="mdl-cell mdl-cell--2-col"><p class="label-text">1</p></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
+                            '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--6-col"><span class="label-container-border"></span></div>' +
+                            '<div class="mdl-cell mdl-cell--3-col"></div>';
+                        labelContainer.querySelector('p:first-of-type').innerHTML = (j+1);
+                        labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i] + "/" + changeToPolarNum(imageToDisplay[i]);
+                        labelContainer.onclick = (function(idParam) {
+                            return function() {
+                                var img = document.getElementById(idParam);
+                                img.webkitRequestFullscreen();
+                            }
+                        })(id);
 
-
-
-
-                    button.onclick = (function(idParam) {
-                        return function() {
-                            var img = document.getElementById(idParam);
-                            img.webkitRequestFullscreen();
-                        }
-                    })(id);
-
-                    container.appendChild(image);
-                    container.appendChild(polarimage);
-                    container.appendChild(button);
+                        container.appendChild(image);
+                        container.appendChild(polarimage);
+                        container.appendChild(labelContainer);
 
                     imagesContainer.appendChild(container);
                 }
