@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="light-grey-color">
+<html>
     <head>
         <title>Полярные результаты</title>
         <meta charset="utf-8">
@@ -9,22 +9,34 @@
         <link rel="stylesheet" href="libs/mdl/material.min.css">
         <link rel="stylesheet" href="libs/selectize/css/selectize.css">
         <!---->
-
         <!--./styles-->
         <link rel="stylesheet" href="styles/general.css">
         <link rel="stylesheet" href="styles/polar-results.css">
         <!---->
     </head>
-
-<!-- Uncomment for background image when empty -->
+    <!-- Uncomment for background image when empty -->
     <body style="background:url(images/neurobox.gif); background-size: auto; background-color: black; background-repeat:no-repeat; background-position:center 80%; background-size:50%; ">
-    <!-- <body class="light-grey-color"> -->
-
+        <!-- <body class="light-grey-color"> -->
         <!-- Always shows a header, even in smaller screens. -->
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
             <header class="mdl-layout__header black-color">
                 <div class="mdl-layout__header-row">
                     <span class="mdl-layout-title">Полярные результаты</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-grid" id="information" style="width:550px; display:none;">
+                        <div class="mdl-cell mdl-cell--1-col" style="margin-top:23px">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <p id="currentPeople" style="margin-top:17px"></p>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col" style="margin-top:23px">
+                            <i class="material-icons">camera</i>
+                        </div>
+                        <div class="mdl-cell mdl-cell--8-col">
+                            <p id="currentImages" style="padding-top:17px"></p>
+                        </div>
+                    </div>
                     <div class="mdl-layout-spacer"></div>
                     <i class="material-icons" onclick="showSettingsModal()" style="cursor:pointer">settings</i>
                 </div>
@@ -39,46 +51,39 @@
                 </nav>
             </div>
             <main class="mdl-layout__content">
-                <div class="page-content">
-                    <div class="mdl-grid">
-                        <div class="mdl-cell mdl-cell--12-col" id="imagesContainer">
-
-                        </div>
+            <div class="page-content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col" id="imagesContainer">
                     </div>
                 </div>
+            </div>
             </main>
         </div>
-
-
         <dialog class="mdl-dialog" style="width:500px">
-            <h4 class="mdl-dialog__title">Настройки</h4>
-            <div class="mdl-dialog__content">
-                <div class="mdl-grid">
-                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
-                        <select id="personToDisplay" multiple onchange="displayImagesPolar()">
-                            <option value="all">all</option>
-                        </select>
-                    </div>
-                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
-                        <select id="imageToDisplay" multiple onchange="displayImagesPolar()">
-                        </select>
-                    </div>
+        <h4 class="mdl-dialog__title">Настройки</h4>
+        <div class="mdl-dialog__content">
+            <div class="mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                    <select id="personToDisplay" multiple onchange="displayImagesPolar()">
+                        <option value="all">all</option>
+                    </select>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                    <select id="imageToDisplay" multiple onchange="displayImagesPolar()">
+                    </select>
                 </div>
             </div>
-            <div class="mdl-dialog__actions">
-                <button type="button" class="mdl-button mdl-js-button mdl-button--raised close" style="margin-right:30px">Закрыть</button>
-            </div>
+        </div>
+        <div class="mdl-dialog__actions">
+            <button type="button" class="mdl-button mdl-js-button mdl-button--raised close" style="margin-right:30px">Закрыть</button>
+        </div>
         </dialog>
-
-
-
         <!-- js libs -->
         <script src="libs/dialog-polyfill/dialog-polyfill.js"></script>
         <script src="libs/mdl/material.min.js"></script>
         <script src="libs/jquery/jquery.min.js"></script>
         <script src="libs/selectize/js/selectize.min.js"></script>
         <!---->
-
         <!--./scripts-->
         <script src="scripts/polar-results.js"></script>
         <!---->

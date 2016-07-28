@@ -25,8 +25,21 @@
                 <div class="mdl-layout__header-row">
                     <span class="mdl-layout-title">Результаты</span>
                     <div class="mdl-layout-spacer"></div>
-                    <div class="mdl-grid">
+                    <div class="mdl-grid" id="information" style="width:550px; display:none; margin-left: 50px">
+                        <div class="mdl-cell mdl-cell--1-col" style="margin-top:23px">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <p id="currentPeople" style="margin-top:17px"></p>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col" style="margin-top:23px">
+                            <i class="material-icons">camera</i>
+                        </div>
+                        <div class="mdl-cell mdl-cell--8-col">
+                            <p id="currentImages" style="padding-top:17px"></p>
+                        </div>
                     </div>
+                    <div class="mdl-layout-spacer"></div>
                     <i class="material-icons" onclick="showSettingsModal()" style="cursor:pointer">settings</i>
                 </div>
 

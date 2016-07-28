@@ -69,11 +69,12 @@ function displayImages() {
     var personToDisplay = $('#personToDisplay').val(),
         imageToDisplay = $('#imageToDisplay').val();
     if (personToDisplay !== null && imageToDisplay !== null) {
+        var currentPeopleList;
         for (var i = 0; i < imageToDisplay.length; i++) {
             if (personToDisplay[0] === 'all') {
+                currentPeopleList = ' Все';
                 var len = +localStorage.getItem('peopleTested');
                 for (var j = 0; j < len; j++) {
-
                     var container = document.createElement('div');
                     container.className = "container";
 
@@ -116,7 +117,7 @@ function displayImages() {
             } else {
                 for (var i = 0; i < imageToDisplay.length; i++) {
                     for (var j = 0; j < personToDisplay.length; j++) {
-
+                        currentPeopleList = personToDisplay;
                         var container = document.createElement('div');
 
                         container.className = "container col-md-6 col-sm-12";
@@ -163,14 +164,18 @@ function displayImages() {
             }
         }
         $('body').css("background", "black");
+         $('#currentPeople').text(currentPeopleList instanceof Array ? currentPeopleList.join(', ') : currentPeopleList);
+    $('#currentImages').text(imageToDisplay.join(', '));
+    $('#information').css('display', '');
     } else {
         $('body').css({
             'background-image': 'url(images/neurobox.gif)',
             'background-size': 'cover'
         });
+        $('#information').css('display', 'none');
     }
-}
-
+   
+} 
 function showSettingsModal() {
     var dialog = document.querySelector('dialog');
     dialogPolyfill.registerDialog(dialog);
