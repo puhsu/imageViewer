@@ -1,0 +1,75 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<!-- Изображение с текстом под ним -->
+				<section data-background-image='../images/neurobox.gif' data-background-size = "580px 580px" data-background-position = "center 25%">
+					<h1 style='margin-top: 550px'>neuro box</h1>
+				</section>
+
+				<section>
+					<h3>Как пользоваться этим сайтом</h3>
+					<p>Данный сайт создавался для того чтобы была возможность в современном формате презентовать результаты тестирования. В настоящий момент человек проходит тест в Microsoft Excel, после чего результаты тестирования заносятся в графическую программу которая после продолжительной, но верной обработки возвращает изображения. Эти изображения уходят в папку XYZ после чего они оторажаются на даннном сайте. Стоит вопрос об интеграции 3D моделей в эту же структуру. Сайт полностью автономен с точки зрения интернета. Для его работы он не требуется и никакие данные он ни отбравляет, ни получает из него.</p>
+				</section>
+
+				<section>
+					<h3>Основные разделы сайта</h3>
+					<p>В данном сайте есть 4 основных раздела:</p>
+						<ol style="align: center">
+							<li> Первичная настройка </li>
+							<li> Режим отображения одиночных отпечатков </li>
+							<li> Полярный режим отображения отпечатков </li>
+							<li> Конструктор презентаций, в котором в настоящий момент находимся </li>
+							<li> Планируется добавить возможность просмотра 3D моделей</li>
+						</ol>
+					<p>Данные разделы можно найти в главном меню</p>
+				</section>
+
+
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				history: true,
+				center:false,
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
