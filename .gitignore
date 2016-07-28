@@ -1,3 +1,5 @@
 TestResult
 .DS_Store
 dist/fonts/HarmoniaSansCyr
+
+dist/libs/reveal/showdown.min.js.map

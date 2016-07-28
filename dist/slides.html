@@ -12,13 +12,11 @@
                         текст
                     </script>
                 </section>
-                <section>Slide 2</section>
+                <section><h1>hello</h1></section>
             </div>
         </div>
         <script src="libs/reveal/reveal.js"></script>
-        <script>
-            Reveal.initialize();
-        </script>
+
         <script type="text/javascript">
             // ==UserScript==
 // @name Use Markdown, sometimes, in your HTML.
@@ -35,7 +33,7 @@
   if (!window.Showdown){
     var scr = document.createElement('script');
     scr.onload = boom;
-    scr.src = 'https://raw.github.com/github/github-flavored-markdown/gh-pages/scripts/showdown.js';
+    scr.src = 'libs/reveal/showdown.min.js';
     document.body.appendChild(scr);
     return;
   }
@@ -56,6 +54,9 @@
   });
 
 }());
+        </script>
+                <script>
+            Reveal.initialize();
         </script>
     </body>
 </html>
