@@ -76,7 +76,7 @@ function displayImages() {
                 var len = +localStorage.getItem('peopleTested');
                 for (var j = 0; j < len; j++) {
                     var container = document.createElement('div');
-                    container.className = "container";
+                    container.className = "container mdl-cell mdl-cell--1-col";
 
                     var image = document.createElement('img');
 
@@ -87,6 +87,11 @@ function displayImages() {
                     }
 
                     image.className = "image";
+
+                    var anchorImage = document.createElement('img');
+                        anchorImage.src = "images/ImageAnchors/" + imageToDisplay[i] + "_001.png";
+                        anchorImage.className = 'anchor';
+
                     var id = imageToDisplay[i] + ((j + 1) + '');
                     container.id = id;
 
@@ -110,7 +115,9 @@ function displayImages() {
                     })(id);
 
                     container.appendChild(image);
+                    container.appendChild(anchorImage);
                     container.appendChild(labelContainer);
+
 
                     imagesContainer.appendChild(container);
                 }

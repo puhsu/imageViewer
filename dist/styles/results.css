@@ -1,11 +1,22 @@
 .container {
-    max-width: 100%;
+    max-width: 50%;
     margin:0 auto;
     background-color: transparent;
+    position: relative;
 }
 .container:-webkit-full-screen {
     margin-left:25%;
 }
+
+.anchor {
+  max-width: 25%;
+  background-color: transparent;
+  position: absolute;
+  bottom: 8%;
+  left: 3%;
+  z-index: 2;
+}
+
 .label-container {
     margin-top: -50px;
     width: 400px;
