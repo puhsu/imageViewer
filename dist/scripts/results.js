@@ -75,8 +75,9 @@ function displayImages() {
                 currentPeopleList = ' Все';
                 var len = +localStorage.getItem('peopleTested');
                 for (var j = 0; j < len; j++) {
+
                     var container = document.createElement('div');
-                    container.className = "container mdl-cell mdl-cell--1-col";
+                    container.className = "container mdl-cell mdl-cell--3-col";
 
                     var image = document.createElement('img');
 
