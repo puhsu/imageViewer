@@ -93,6 +93,7 @@ function displayImages() {
                         anchorImage.src = "images/ImageAnchors/" + imageToDisplay[i] + "_001.png";
                         anchorImage.className = 'anchor';
 
+
                     var id = imageToDisplay[i] + ((j + 1) + '');
                     container.id = id;
 
@@ -140,6 +141,11 @@ function displayImages() {
                         }
 
                         image.className = "image";
+
+                        var anchorImage = document.createElement('img');
+                            anchorImage.src = "images/ImageAnchors/" + imageToDisplay[i] + "_001.png";
+                            anchorImage.className = 'anchor';
+
                         var id = imageToDisplay[i] + ((j + 1) + '');
                         container.id = id;
 
@@ -164,6 +170,7 @@ function displayImages() {
 
 
                         container.appendChild(image);
+                        container.appendChild(anchorImage);
                         container.appendChild(labelContainer);
 
                         imagesContainer.appendChild(container);

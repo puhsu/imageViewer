@@ -87,8 +87,16 @@ function displayImagesPolar() {
                     }
                     image.className = "image";
                     polarimage.className = "image";
+
+                    var anchorImage = document.createElement('img');
+                        anchorImage.src = "images/PolarAnchors/" + imageToDisplay[i] + "_001.png";
+                        anchorImage.className = 'anchor';
+
                     var id = imageToDisplay[i] + ((j + 1) + '');
                     container.id = id;
+
+
+
 
                     var labelContainer = document.createElement('div');
                     labelContainer.className = 'mdl-grid label-container';
@@ -111,6 +119,7 @@ function displayImagesPolar() {
 
                     container.appendChild(image);
                     container.appendChild(polarimage);
+                    container.appendChild(anchorImage);
                     container.appendChild(labelContainer);
 
                     imagesContainer.appendChild(container);
@@ -137,6 +146,10 @@ function displayImagesPolar() {
                     image.className = "image";
                     polarimage.className = "image";
 
+                    var anchorImage = document.createElement('img');
+                        anchorImage.src = "images/PolarAnchors/" + imageToDisplay[i] + "_001.png";
+                        anchorImage.className = 'anchor';
+
                     var id = imageToDisplay[i] + personToDisplay[j];
                     container.id = id;
 
@@ -161,6 +174,7 @@ function displayImagesPolar() {
 
                     container.appendChild(image);
                     container.appendChild(polarimage);
+                    container.appendChild(anchorImage);
                     container.appendChild(labelContainer);
 
                     imagesContainer.appendChild(container);
