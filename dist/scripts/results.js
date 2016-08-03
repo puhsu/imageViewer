@@ -100,12 +100,12 @@ function displayImages() {
                     var labelContainer = document.createElement('div');
                     labelContainer.className = 'mdl-grid label-container';
                     labelContainer.innerHTML =
-                        '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                        '<div class="mdl-cell mdl-cell--7-col"></div>' +
                         '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">person</i></div>' +
-                        '<div class="mdl-cell mdl-cell--2-col"><p class="label-text">1</p></div>' +
+                        '<div class="mdl-cell mdl-cell--1-col"><p class="label-text">1</p></div>' +
                         '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
-                        '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
-                        '<div class="mdl-cell mdl-cell--3-col"></div>' +
+                        '<div class="mdl-cell mdl-cell--1-col second-p"><p class="label-text">1/4</p></div>' +
+                        '<div class="mdl-cell mdl-cell--1-col"></div>' +
                         '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
                     labelContainer.querySelector('p:first-of-type').innerHTML = (j + 1);
                     labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i];
@@ -152,12 +152,12 @@ function displayImages() {
                         var labelContainer = document.createElement('div');
                         labelContainer.className = 'mdl-grid label-container';
                         labelContainer.innerHTML =
-                            '<div class="mdl-cell mdl-cell--4-col"></div>' +
-                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">person</i></div>' +
-                            '<div class="mdl-cell mdl-cell--2-col"><p class="label-text">1</p></div>' +
-                            '<div class="mdl-cell mdl-cell--1-col"><i class="material-icons">camera</i></div>' +
-                            '<div class="mdl-cell mdl-cell--2-col second-p"><p class="label-text">1/4</p></div>' +
-                            '<div class="mdl-cell mdl-cell--2-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--7-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col "><i class="material-icons">person</i></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col "><p class="label-text">1</p></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col "><i class="material-icons">camera</i></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col second-p "><p class="label-text">1/4</p></div>' +
+                            '<div class="mdl-cell mdl-cell--1-col"></div>' +
                             '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
                         labelContainer.querySelector('p:first-of-type').innerHTML = personToDisplay[j];
                         labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i];

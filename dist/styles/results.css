@@ -3,6 +3,7 @@
     margin:0 auto;
     background-color: transparent;
     position: relative;
+    text-align: center;
 }
 .container-results:-webkit-full-screen {
     width: 50%;
