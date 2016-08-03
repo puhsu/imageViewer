@@ -11,13 +11,14 @@
 }
 
 .anchor {
-  max-width: 22%;
+  max-width: 25%;
   background-color: transparent;
   position: absolute;
-  bottom: 20%;
-  left: 0%;
+  bottom: 1%;
+  left: 5%;
   z-index: 2;
 }
+
 
 .label-container {
     margin-top: -50px;
@@ -42,3 +43,7 @@
     height:1px;
     background:white;
 }
+
+/*.imageLabel {
+  margin-top: -88%;
+}*/
