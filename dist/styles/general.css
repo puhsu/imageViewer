@@ -59,8 +59,11 @@
 }
 /********/
 .image {
-    max-width: 100%;
+    max-width: 65%;
     background-color: transparent;
+    margin-left: 16%;
+
+
 }
 
 .container {

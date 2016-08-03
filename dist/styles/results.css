@@ -10,10 +10,10 @@
 }
 
 .anchor {
-  max-width: 35%;
+  max-width: 25%;
   background-color: transparent;
   position: absolute;
-  bottom: 10%;
+  bottom: 12%;
   left: 0%;
   z-index: 2;
 }
