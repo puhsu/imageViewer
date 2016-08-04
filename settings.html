@@ -1,19 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
     <head>
         <title>Настройки</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+
         <!--css libs-->
         <link rel="stylesheet" href="libs/dialog-polyfill/dialog-polyfill.css">
         <link rel="stylesheet" href="libs/mdl/material.min.css">
         <!---->
+
         <!--./styles-->
         <link rel="stylesheet" href="styles/general.css">
         <!---->
+
     </head>
     <body class="light-grey-color">
-        <!-- Always shows a header, even in smaller screens. -->
         <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
             <header class="mdl-layout__header black-color">
                 <div class="mdl-layout__header-row">
@@ -53,6 +55,7 @@
                     </div>
                 </div>
                 <div class="mdl-grid">
+                    <!-- В этом контейнере распологаются все чекбоксы -->
                     <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet">
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-all" >
                             <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input" value="all" onchange="checkUncheckAll()">
@@ -71,7 +74,7 @@
                             <span class="mdl-checkbox__label">Квадрат</span>
                         </label>
                     </div>
-                    
+
                     <div class="mdl-cell mdl-cell--2-col mdl-cell--8-col-tablet">
                         <label class="mdl-checkbox mdl-js-checkbox" for="checkbox-1">
                             <input type="checkbox" id="checkbox-1" class="mdl-checkbox__input" value="1">
@@ -199,6 +202,7 @@
             </main>
         </div>
 
+        <!-- разметка для модального окна -->
         <dialog class="mdl-dialog">
             <h4 class="mdl-dialog__title">Ошибка</h4>
             <div class="mdl-dialog__content">
@@ -214,6 +218,7 @@
         <script src="libs/mdl/material.min.js"></script>
         <script src="libs/jquery/jquery.min.js"></script>
         <!---->
+
         <!--./scripts-->
         <script src="scripts/settings.js"></script>
         <!---->
