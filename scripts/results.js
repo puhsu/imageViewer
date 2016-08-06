@@ -1,60 +1,52 @@
+// в элемент select#peopleTested добавляются опции (протестированные люди)
+// затем при использовании плагина selectize создается стилизованный элемент select
 var peopleTested = localStorage.getItem("peopleTested");
-var selectElement = document.getElementById("personToDisplay");
-
-var imagesToShowInSelect = localStorage.getItem('selectedResults').split(' ');
-imagesToShowInSelect.pop();
-console.log(imagesToShowInSelect);
-
-var selectElementImages = document.getElementById("imageToDisplay");
-
-while (selectElementImages.firstChild) {
-    selectElementImages.removeChild(selectElementImages.firstChild);
-}
-
-
-for (var i = 0; i < imagesToShowInSelect.length; i++) {
-    var option = document.createElement('option');
-    option.value = imagesToShowInSelect[i];
-    option.text = imagesToShowInSelect[i];
-    selectElementImages.add(option);
-}
-
-
+var peopleTestedSelect = $("#personToDisplay");
 for (var i = 1; i <= peopleTested; i++) {
-    var option = document.createElement('option');
-    option.value = i;
-    option.text = i;
-    selectElement.add(option);
+    var option = $('<option/>', {
+        value: i,
+        text: i
+    });
+    peopleTestedSelect.append(option);
 }
 var isThereAll = 0;
-var personToDisplaySelectObj = $('#personToDisplay').selectize({
-    delimiter: ',',
-    persist: true,
+peopleTestedSelect.selectize({
     placeholder: 'номер человека',
     plugins: ['remove_button'],
     onItemAdd: function(value) {
+        // функция исполняется при добавлении опции в элементе select
+        // при добавлении опции 'all' удаляются все остальные, добавленные на этот момент опции и добавляется 'all'
         if (value === 'all' && isThereAll === 0) {
-            personToDisplaySelectObj[0].selectize.clear();
-            isThereAll++;
-            personToDisplaySelectObj[0].selectize.addItem('all');
+            // если в первый раз добавляется 'all', отистить select и добавить
+            // all (перед этим обнулить isThereAll чтобы не попасть в
+            // бесконечный цикл, войдя снова в этот же блок)
+            peopleTestedSelect[0].selectize.clear();
+            isThereAll = 1;
+            peopleTestedSelect[0].selectize.addItem('all');
         } else {
+            // при добавлении любой другой опции удаляется all и добавляется выбранная опция
             if (value !== 'all' && isThereAll === 1) {
-                personToDisplaySelectObj[0].selectize.clear();
+                peopleTestedSelect[0].selectize.clear();
                 isThereAll = 0;
-                personToDisplaySelectObj[0].selectize.addItem(value);
+                peopleTestedSelect[0].selectize.addItem(value);
             }
-        }
-        //personToDisplaySelectObj[0].selectize.close();
-    },
-    create: function(input) {
-        return {
-            value: input,
-            text: input
         }
     }
 });
 
-$('#imageToDisplay').selectize({
+
+// В элемент select добавляются опции (выбранные результаты) из localStorage
+var selectedResults = localStorage.getItem('selectedResults').split(' ');
+selectedResults.pop();
+var selectedResultsSelect = $("#imageToDisplay");
+for (var i = 0; i < selectedResults.length; i++) {
+    var option = $('<option/>', {
+        value: selectedResults[i],
+        text: selectedResults[i]
+    });
+    selectedResultsSelect.append(option);
+}
+selectedResultsSelect.selectize({
     plugins: ['remove_button'],
     placeholder: 'развертка'
 });
