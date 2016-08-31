@@ -2,7 +2,6 @@ var peopleTested = localStorage.getItem("peopleTested");
 var imagesToShowInSelect = localStorage.getItem('selectedResults').split(' ');
 imagesToShowInSelect.pop();
 console.log(imagesToShowInSelect);
-
 var selectElement = document.getElementById("personToDisplay");
 var selectElementImages = document.getElementById("imageToDisplay");
 
