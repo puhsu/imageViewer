@@ -1,6 +1,5 @@
-// в элемент select#peopleTested добавляются опции (протестированные люди)
-// затем при использовании плагина selectize создается стилизованный элемент select
 var peopleTested = localStorage.getItem("peopleTested");
+
 var peopleTestedSelect = $("#personToDisplay");
 for (var i = 1; i <= peopleTested; i++) {
     var option = $('<option/>', {
@@ -34,15 +33,20 @@ peopleTestedSelect.selectize({
     }
 });
 
-
-// В элемент select добавляются опции (выбранные результаты) из localStorage
-var selectedResults = localStorage.getItem('selectedResults').split(' ');
+var selectedResults = localStorage.getItem("selectedResults").split(' ');
 selectedResults.pop();
+console.log(selectedResults);
+
 for (var i = selectedResults.length - 1; i >= 0; i--) {
-    if (selectedResults[i] == "Butterfly" || selectedResults[i] == "Square" || selectedResults[i] == "Triangle") {
+    if(selectedResults[i] !== "Butterfly" && selectedResults[i] !== "Triangle" && selectedResults[i] !== "Square") {
+        console.log(selectedResults[i]);
         selectedResults.splice(i, 1);
     }
 }
+
+console.log(selectedResults);
+
+
 
 var selectedResultsSelect = $("#imageToDisplay");
 for (var i = 0; i < selectedResults.length; i++) {
@@ -56,7 +60,6 @@ selectedResultsSelect.selectize({
     plugins: ['remove_button'],
     placeholder: 'развертка'
 });
-
 
 
 function displayImages() {
@@ -75,7 +78,7 @@ function displayImages() {
                 for (var j = 0; j < len; j++) {
 
                     var container = document.createElement('div');
-                    container.className = "container-results mdl-cell mdl-cell--4-col";
+                    container.className = "container-results mdl-cell mdl-cell--12-col";
 
                     var image = document.createElement('img');
 
@@ -85,11 +88,15 @@ function displayImages() {
                         image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j + 1) + ".png";
                     }
 
-                    image.className = "image";
-
-                    var anchorImage = document.createElement('img');
-                        anchorImage.src = "images/ImageAnchors/" + imageToDisplay[i] + "_001.png";
-                        anchorImage.className = 'anchor';
+                    if(imageToDisplay[i] == "Butterfly") {
+                       image.className = "Butterfly";
+                    }
+                    if(imageToDisplay[i] == "Triangle") {
+                        image.className = "Triangle";
+                    }
+                    if(imageToDisplay[i] == "Square") {
+                        image.className = "Square";
+                    }
 
 
                     var id = imageToDisplay[i] + ((j + 1) + '');
@@ -98,7 +105,7 @@ function displayImages() {
                     var labelContainer = document.createElement('div');
                     labelContainer.className = 'mdl-grid label-container';
                     labelContainer.innerHTML =
-                        '<div class="mdl-cell mdl-cell--7-col"></div>' +
+                        '<div class="mdl-cell mdl-cell--4-col"></div>' +
                         '<div class="mdl-cell mdl-cell--1-col imageLabel"><i class="material-icons">person</i></div>' +
                         '<div class="mdl-cell mdl-cell--1-col imageLabel"><p class="label-text">1</p></div>' +
                         '<div class="mdl-cell mdl-cell--1-col imageLabel"><i class="material-icons">camera</i></div>' +
@@ -115,7 +122,6 @@ function displayImages() {
                     })(id);
 
                     container.appendChild(image);
-                    container.appendChild(anchorImage);
                     container.appendChild(labelContainer);
 
 
@@ -127,7 +133,7 @@ function displayImages() {
                         currentPeopleList = personToDisplay;
                         var container = document.createElement('div');
 
-                        container.className = "container-results mdl-cell mdl-cell--4-col";
+                        container.className = "container-results mdl-cell mdl-cell--12-col";
 
 
                         var image = document.createElement('img');
@@ -137,8 +143,15 @@ function displayImages() {
                         } else {
                             image.src = "TestResult/00" + (j + 1) + "/" + imageToDisplay[i] + ".00" + (j + 1) + ".png";
                         }
-
-                        image.className = "image";
+                        if(imageToDisplay[i] == "Butterfly") {
+                            image.className = "Butterfly";
+                        }
+                        if(imageToDisplay[i] == "Triangle") {
+                            image.className = "Triangle";
+                        }
+                        if(imageToDisplay[i] == "Square") {
+                            image.className = "Square";
+                        }
 
                         var anchorImage = document.createElement('img');
                             anchorImage.src = "images/ImageAnchors/" + imageToDisplay[i] + "_001.png";
@@ -150,7 +163,7 @@ function displayImages() {
                         var labelContainer = document.createElement('div');
                         labelContainer.className = 'mdl-grid label-container';
                         labelContainer.innerHTML =
-                            '<div class="mdl-cell mdl-cell--7-col"></div>' +
+                            '<div class="mdl-cell mdl-cell--4-col"></div>' +
                             '<div class="mdl-cell mdl-cell--1-col imageLabel"><i class="material-icons">person</i></div>' +
                             '<div class="mdl-cell mdl-cell--1-col imageLabel"><p class="label-text">1</p></div>' +
                             '<div class="mdl-cell mdl-cell--1-col imageLabel"><i class="material-icons">camera</i></div>' +
@@ -168,12 +181,12 @@ function displayImages() {
 
 
                         container.appendChild(image);
-                        container.appendChild(anchorImage);
                         container.appendChild(labelContainer);
 
                         imagesContainer.appendChild(container);
                     }
                 }
+
             }
         }
         $('body').css("background", "black");
@@ -193,6 +206,8 @@ function displayImages() {
     }
 
 }
+
+
 function showSettingsModal() {
     var dialog = document.querySelector('dialog');
     dialogPolyfill.registerDialog(dialog);
@@ -201,3 +216,4 @@ function showSettingsModal() {
         dialog.close();
     });
 }
+
