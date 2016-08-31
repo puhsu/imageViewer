@@ -131,7 +131,10 @@ function displayImages() {
 
 
                         var image = document.createElement('img');
-
+                        var x = document.createElement('img'), y = document.createElement('img'), z = document.createElement('img');
+                        x.src = "TestResult/0001/1.0001.png";
+                        y.src = "TestResult/0001/1.0001.png";
+                        z.src = "TestResult/0001/1.0001.png";
                         if (j < 9) {
                             image.src = "TestResult/000" + (j + 1) + "/" + imageToDisplay[i] + ".000" + (j + 1) + ".png";
                         } else {
@@ -139,6 +142,9 @@ function displayImages() {
                         }
 
                         image.className = "image";
+                        x.className = "notInFullScreen x";
+                        y.className = "notInFullScreen y";
+                        z.className = "notInFullScreen z";
 
                         var anchorImage = document.createElement('img');
                             anchorImage.src = "images/ImageAnchors/" + imageToDisplay[i] + "_001.png";
@@ -163,14 +169,25 @@ function displayImages() {
                             return function() {
                                 var img = document.getElementById(idParam);
                                 img.webkitRequestFullscreen();
+                                x.className = "x";
+                                y.className = "y";
+                                z.className = "z";
                             }
                         })(id);
 
+                        $(id).bind('webkitfullscreenchange mozfullscreenchange fullscreenchange', function(e) {
+                            var state = document.fullScreen || document.mozFullScreen || document.webkitIsFullScreen;
+                            var event = state ? 'FullscreenOn' : 'FullscreenOff';
 
+                            // Now do something interesting
+                            alert('Event: ' + event);    
+                        });
                         container.appendChild(image);
                         container.appendChild(anchorImage);
                         container.appendChild(labelContainer);
-
+                        container.appendChild(x);
+                        container.appendChild(y);
+                        container.appendChild(z);
                         imagesContainer.appendChild(container);
                     }
                 }

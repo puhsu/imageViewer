@@ -44,6 +44,18 @@
     background:white;
 }
 
-/*.imageLabel {
-  margin-top: -88%;
-}*/
+.notInFullScreen {
+    display: none;
+}
+
+.x.x.x:-webkit-full-screen {
+    display: block !important;
+}
+
+.y:-webkit-full-screen {
+    display: block !important;
+}
+
+.z:-webkit-full-screen {
+    display: block !important;
+}
