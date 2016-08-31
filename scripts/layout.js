@@ -110,7 +110,7 @@ function displayImages() {
                         '<div class="mdl-cell mdl-cell--1-col imageLabel"><p class="label-text">1</p></div>' +
                         '<div class="mdl-cell mdl-cell--1-col imageLabel"><i class="material-icons">camera</i></div>' +
                         '<div class="mdl-cell mdl-cell--1-col second-p imageLabel"><p class="label-text">1/4</p></div>' +
-                        '<div class="mdl-cell mdl-cell--1-col imageLabel"></div>' +
+                        '<div class="mdl-cell mdl-cell--4-col imageLabel"></div>' +
                         '<div class="mdl-cell mdl-cell--12-col"><span class="label-container-border"></span></div>';
                     labelContainer.querySelector('p:first-of-type').innerHTML = (j + 1);
                     labelContainer.querySelector('.second-p p').innerHTML = imageToDisplay[i];
@@ -216,4 +216,3 @@ function showSettingsModal() {
         dialog.close();
     });
 }
-
