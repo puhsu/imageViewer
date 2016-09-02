@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Результаты</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0">
+        <!--./libs/*.css-->
+        <link rel="stylesheet" href="libs/dialog-polyfill/dialog-polyfill.css">
+        <link rel="stylesheet" href="libs/mdl/material.min.css">
+        <link rel="stylesheet" href="libs/selectize/css/selectize.css">
+        <!---->
+        <!--./styles-->
+        <link rel="stylesheet" href="styles/general.css">
+        <link rel="stylesheet" type="text/css" href="styles/results.css">
+        <!---->
+    </head>
+
+    <!-- Uncomment for background image when empty -->
+        <body style="background:url(images/neurobox.gif); background-size: auto; background-color: black; background-repeat:no-repeat; background-position:center 70px; background-size:50%; ">
+        <!-- <body class="light-grey-color"> -->
+
+        <!-- Always shows a header, even in smaller screens. -->
+        <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+            <header class="mdl-layout__header black-color">
+                <div class="mdl-layout__header-row">
+                    <span class="mdl-layout-title">Результаты</span>
+                    <div class="mdl-layout-spacer"></div>
+                    <div class="mdl-grid" id="information" style="width:600px; display:none; margin-left: 130px">
+                        <div class="mdl-cell mdl-cell--1-col" style="margin-top:23px">
+                            <i class="material-icons">person</i>
+                        </div>
+                        <div class="mdl-cell mdl-cell--2-col">
+                            <p id="currentPeople" style="margin-top:17px"></p>
+                        </div>
+                        <div class="mdl-cell mdl-cell--1-col" style="margin-top:23px">
+                            <i class="material-icons">camera</i>
+                        </div>
+                        <div class="mdl-cell mdl-cell--8-col">
+                            <p id="currentImages" style="padding-top:17px"></p>
+                        </div>
+                    </div>
+                    <div class="mdl-layout-spacer"></div>
+                    <i class="material-icons" onclick="showSettingsModal()" style="cursor:pointer">settings</i>
+                    <img src="images/neuroboxlogo.png" style="position:relative; height:60px; margin-top:5px; margin-left:-130px; margin-right:30px">
+                </div>
+            </header>
+
+
+            <div class="mdl-layout__drawer">
+                <span class="mdl-layout-title">neuro box</span>
+                <nav class="mdl-navigation">
+                    <a class="mdl-navigation__link" href="index.html">Главная</a>
+                    <a class="mdl-navigation__link" href="results.html">Результаты</a>
+                    <a class="mdl-navigation__link" href="polar-results.html">Полярные результаты</a>
+                    <a class="mdl-navigation__link" href="settings.html">Развертки</a>
+                    <a class="mdl-navigation__link" href="settings.html">Настройки</a>
+                </nav>
+            </div>
+
+
+            <main class="mdl-layout__content">
+            <div class="page-content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--12-col">
+                      <div class="mdl-grid" id="imagesContainer">
+
+                      </div>
+                    </div>
+                </div>
+            </div>
+            </main>
+        </div>
+
+
+        <dialog class="mdl-dialog" style="width:500px">
+            <h4 class="mdl-dialog__title">Настройки</h4>
+            <div class="mdl-dialog__content">
+                <div class="mdl-grid">
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                        <select id="personToDisplay" multiple onchange="displayImages()">
+                            <option value="all">all</option>
+                        </select>
+                    </div>
+                    <div class="mdl-cell mdl-cell--6-col mdl-cell--6-col-phone">
+                        <select id="imageToDisplay" multiple onchange="displayImages()">
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="mdl-dialog__actions">
+                <button type="button" class="mdl-button mdl-js-button mdl-button--raised close" style="margin-right:30px">Закрыть</button>
+            </div>
+        </dialog>
+
+        <!-- js libs -->
+        <script src="libs/dialog-polyfill/dialog-polyfill.js"></script>
+        <script src="libs/mdl/material.min.js"></script>
+        <script src="libs/jquery/jquery.min.js"></script>
+        <script src="libs/selectize/js/selectize.min.js"></script>
+        <!---->
+        <!--personal scripts-->
+        <script src="scripts/group-results.js"></script>
+        <!---->
+    </body>
+</html>
