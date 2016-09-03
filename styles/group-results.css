@@ -1,9 +1,10 @@
 .container-results {
     max-width: 100%;
-    margin:0 auto;
+    /*margin:0 auto;*/
     background-color: transparent;
     position: relative;
     text-align: center;
+    display: inline-block;
 }
 .container-results:-webkit-full-screen {
     width: 50%;
@@ -49,3 +50,20 @@
 /*.imageLabel {
   margin-top: -88%;
 }*/
+
+.asys {
+  width: 100%;
+}
+.tsys {
+  width: 100%;
+  text-align: center;
+}
+.eimsys {
+  width: 100%;
+}
+.cnumsys {
+  width: 100%;
+}
+.numcsys {
+  width: 100%;
+}
