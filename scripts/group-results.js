@@ -67,7 +67,7 @@ var selectedResultsSelect = $("#imageToDisplay");
 if(asys.length > 0) {
     var option = $('<option/>', {
         value: "asys",
-        text: "А ситстема"
+        text: "А система"
     });
     selectedResultsSelect.append(option);
 }
@@ -81,21 +81,21 @@ if(tsys.length > 0) {
 if(eimsys.length > 0) {
     var option = $('<option/>', {
         value: "eimsys",
-        text: "b1..b6"
+        text: "b1, b2, b3, b4, b5, b6"
     });
     selectedResultsSelect.append(option);
 }
 if(cnumsys.length > 0) {
     var option = $('<option/>', {
         value: "cnumsys",
-        text: "c1..c6"
+        text: "c1, c2, c3, c4, c5, c6"
     });
     selectedResultsSelect.append(option);
 }
 if(numcsys.length > 0) {
     var option = $('<option/>', {
         value: "numcsys",
-        text: "1C..6C"
+        text: "1C, 2C, 3C, 4C, 5C, 6C"
     });
     selectedResultsSelect.append(option);
 }
@@ -600,15 +600,49 @@ function displayImages() {
              displayShownImageNames.push('b0, b7');
            }
            if (imageToDisplay[i] == 'eimsys') {
-             displayShownImageNames.push('b1..b6');
+             displayShownImageNames.push('b1, b2, b3, b4, b5, b6');
            }
            if (imageToDisplay[i] == 'cnumsys') {
-             displayShownImageNames.push('c1..c6');
+             displayShownImageNames.push('c1, c2, c3, c4, c5, c6');
            }
            if (imageToDisplay[i] == 'numcsys') {
-             displayShownImageNames.push('1C..6C');
+             displayShownImageNames.push('1C, 2C, 3C, 4C, 5C, 6C');
            }
          }
+
+         var ttrue = displayShownImageNames.indexOf('b0, b7');
+         var eimtrue = displayShownImageNames.indexOf('b1, b2, b3, b4, b5, b6');
+         var cnumtrue = displayShownImageNames.indexOf('c1, c2, c3, c4, c5, c6');
+         var numctrue = displayShownImageNames.indexOf('1C, 2C, 3C, 4C, 5C, 6C');
+
+         if((ttrue > -1) && (eimtrue > -1)) {
+           if(eimtrue > ttrue){
+             displayShownImageNames.splice(eimtrue,1);
+             displayShownImageNames[ttrue] = 'В система';
+             cnumtrue = displayShownImageNames.indexOf('c1, c2, c3, c4, c5, c6');
+             numctrue = displayShownImageNames.indexOf('1C, 2C, 3C, 4C, 5C, 6C');
+           } else {
+             displayShownImageNames.splice(ttrue,1);
+             displayShownImageNames[eimtrue] = 'В система';
+             cnumtrue = displayShownImageNames.indexOf('c1, c2, c3, c4, c5, c6');
+             numctrue = displayShownImageNames.indexOf('1C, 2C, 3C, 4C, 5C, 6C');
+           }
+         }
+
+         if((cnumtrue > -1) && (numctrue > -1)) {
+           if(cnumtrue > numctrue){
+             displayShownImageNames.splice(cnumtrue,1);
+             displayShownImageNames[numctrue] = 'C система';
+             ttrue = displayShownImageNames.indexOf('b0, b7');
+             eimtrue = displayShownImageNames.indexOf('b1, b2, b3, b4, b5, b6');
+           } else {
+             displayShownImageNames.splice(numctrue,1);
+             displayShownImageNames[cnumtrue] = 'C система';
+             ttrue = displayShownImageNames.indexOf('b0, b7');
+             eimtrue = displayShownImageNames.indexOf('b1, b2, b3, b4, b5, b6');
+           }
+         }
+         console.log(displayShownImageNames);
 
         //  for(var i = 0; i < displayShownImageNames.length; i++) {
         //    if ('b0, b7')
