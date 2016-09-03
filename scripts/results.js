@@ -180,7 +180,7 @@ function displayImages() {
                             var event = state ? 'FullscreenOn' : 'FullscreenOff';
 
                             // Now do something interesting
-                            alert('Event: ' + event);    
+                            alert('Event: ' + event);
                         });
                         container.appendChild(image);
                         container.appendChild(anchorImage);
